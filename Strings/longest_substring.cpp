@@ -8,18 +8,20 @@ public:
         int count = 0;
         int max_count = 0;
         int j=0;
-        for(int i=0; i< s.length() - max_count;i++)
+        for(int i=0; i< s.length();i++)
         {
             if(e.empty())
-               { e.push_back(s[i]);
-                count++;}
+           { 
+                e.push_back(s[i]);
+                count++;
+            }
             else if(std::count(e.begin(), e.end(), s[i]))
             {
                 if(count>max_count)
                     max_count = count;
                 count=0;
                 e.clear();
-                i = ++j;
+                i = j++;
             }
             else
             {
